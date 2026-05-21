@@ -41,11 +41,11 @@ jobs:
 
       - name: Check for secrets in code
         uses: trufflesecurity/trufflehog@main
-        extra_args: --only-verified
         with:
           path: ./
           base: ${{ github.event.repository.default_branch }}
           head: HEAD
+          extra_args: --only-verified
         continue-on-error: true    # advisory only — won't block deploy
 
   # ────────────────────────────────────────────────────────────
